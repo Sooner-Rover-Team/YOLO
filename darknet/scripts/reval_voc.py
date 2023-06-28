@@ -58,7 +58,7 @@ def do_python_eval(devkit_path, year, image_set, classes, output_dir = 'results'
     aps = []
     # The PASCAL VOC metric changed in 2010
     use_07_metric = True if int(year) < 2010 else False
-    print 'VOC07 metric? ' + ('Yes' if use_07_metric else 'No')
+    print('VOC07 metric? ' + ('Yes' if use_07_metric else 'No'))
     if not os.path.isdir(output_dir):
         os.mkdir(output_dir)
     for i, cls in enumerate(classes):
@@ -97,5 +97,5 @@ if __name__ == '__main__':
 
     classes = [t.strip('\n') for t in lines]
 
-    print 'Evaluating detections'
+    print('Evaluating detections')
     do_python_eval(args.voc_dir, args.year, args.image_set, classes, output_dir)
